@@ -1,0 +1,14 @@
+.card {
+  padding: 8px;
+  margin-bottom: 4px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .radio-button-container {
+    padding: 0 4px;
+  }
+  p {
+    margin: 0;
+  }
+}
