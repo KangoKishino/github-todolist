@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { APIService } from 'src/app/service/API/api.service';
 @Component({
   selector: 'app-repository',
   templateUrl: './repository.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepositoryComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public apiService: APIService) { }
+  repositories: any[] = []
   ngOnInit(): void {
+    this.apiService.getRepository().subscribe({
+      next: r => {
+        this.repositories = r
+      }
+    })
   }
 
 }
